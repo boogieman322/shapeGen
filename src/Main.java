@@ -16,7 +16,7 @@ public class Main {
             while (true) {
                 okno.repaint();
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(250);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -35,7 +35,7 @@ public class Main {
                  System.out.println(okno.container.getCount());
 
                  try {
-                     Thread.sleep(3500);
+                     Thread.sleep(1500);
                      System.out.println("Shape added");
 
                  } catch (InterruptedException e) {
@@ -56,7 +56,7 @@ public class Main {
                  oknoDuo.repaint();
 
                  try {
-                     Thread.sleep(500);
+                     Thread.sleep(250);
                  } catch (InterruptedException e) {
                      e.printStackTrace();
                  }

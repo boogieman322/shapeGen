@@ -25,9 +25,10 @@ public class Shape {
     public int[] getPropertiesArr(int currentWindowWidth, int currentWindowHeight,
                                   int maxSize){
 
-
-        int maxSizeX = (maxSize*currentWindowHeight/1024);
-        int maxSizeY = (maxSize*currentWindowHeight/768);
+        float scaleX = ((float)currentWindowWidth/512);
+        float scaleY = ((float)currentWindowHeight/384);
+        int maxSizeX = (int)(maxSize*scaleX);
+        int maxSizeY = (int)(maxSize*scaleY);
 
 
 
@@ -37,12 +38,12 @@ public class Shape {
             trianglePropArr[0] = type;
 
             trianglePropArr[1] = (int)(properties[0]*currentWindowWidth);   // x1
-            trianglePropArr[2] = trianglePropArr[0]+(int)(properties[2]*maxSizeX);   // x2
-            trianglePropArr[3] = trianglePropArr[0];                         // x3
+            trianglePropArr[2] = trianglePropArr[1]+(int)(maxSize*properties[3]*scaleX);   // x2
+            trianglePropArr[3] = trianglePropArr[1]+(int)(scaleX*maxSize*properties[3]/2);                         // x3
 
             trianglePropArr[4] = (int)(properties[1]*currentWindowHeight);   // y1
-            trianglePropArr[5] = trianglePropArr[3];                         // y2
-            trianglePropArr[6] = trianglePropArr[3]+(int)(properties[2]*maxSizeY);   // y3
+            trianglePropArr[5] = trianglePropArr[4];                         // y2
+            trianglePropArr[6] = trianglePropArr[4]-(int)(properties[3]*maxSize*0.86F*scaleY);   // y3
 
             return trianglePropArr;
         }
