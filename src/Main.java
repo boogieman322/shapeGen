@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        myWindow okno = new myWindow("Generator livestream");
-        myWindow oknoDuo = new myWindow("Data from file");
+        myWindow okno = new myWindow("Generator livestream", 512,384);
+        myWindow oknoDuo = new myWindow("Data from file",512,384);
 
 
         Thread t2 = new Thread(()->{

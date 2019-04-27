@@ -8,12 +8,15 @@ public class myWindow extends JFrame {
    private final int maxSize = 300;
 
 
-    public myWindow(String title){
+    public myWindow(String title, int startX, int startY){
         super(title);
-        this.setSize(512,384);
+        this.setSize(startX,startY);
         this.setResizable(true);
         this.createContainer();
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        this.add(new myPane(container));
+
 
         this.setVisible(true);
 
@@ -26,7 +29,7 @@ public class myWindow extends JFrame {
 
     public void paint(Graphics g){
         super.paint(g);
-        Shape tmp;
+       /* Shape tmp;
         int[] propTmp;
 
         for(int i = 0; i < container.getCount(); i++){
@@ -56,7 +59,7 @@ public class myWindow extends JFrame {
 
             }
 
-        }
+        } */
 
     }
 
@@ -69,4 +72,10 @@ public class myWindow extends JFrame {
     }
 
 
-}
+    }
+
+
+
+
+
+

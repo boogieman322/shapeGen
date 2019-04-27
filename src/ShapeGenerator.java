@@ -1,6 +1,9 @@
 public class ShapeGenerator{
 
-    public ShapeGenerator() { }
+
+    public ShapeGenerator() {
+    }
+
 
     public Shape generateShape(){
 
@@ -21,12 +24,28 @@ public class ShapeGenerator{
         colors[1] = (float)(Math.random());
         colors[2] = (float)(Math.random());
 
-
+        if(fitsInWindow(shapeProp, type))
         return new Shape(shapeProp, type, colors);
+        else
+            System.out.print("DENY");
+            return generateShape();
     }
 
 
+    public boolean fitsInWindow(float[] array, byte type){
 
+            if(type== 3){
+                if ((array[0]+array[3]<= 1F) && (array[1]-(array[3]/2) < 1F))
+                    return true;
+                // else
+                   // return false;
+            }
+
+            if((array[0]+array[2]) <= 1F && (array[1]+array[3]) <= 1F){
+                return true;}
+
+                return false;
+    }
 
 
 
