@@ -40,10 +40,7 @@ public class myPane extends JPanel {
                     int[][] trianglePoint = tmp.getTrainglePoints(getWidth(), getHeight(), maxSize);
                     g.drawPolygon(trianglePoint[0], trianglePoint[1], 3);
                     break;
-
             }
-
         }
     }
-
 }

@@ -1,6 +1,7 @@
 import java.io.*;
 
 public class FileManager {
+
     private File database;
     private FileWriter writer;
     private BufferedReader bufferedReader;
@@ -15,7 +16,6 @@ public class FileManager {
         database = new File("C:\\s19818\\"+filename);
         this.lock = lock;
 
-
         try {
             database.createNewFile();
             writer = new FileWriter(database);
@@ -23,7 +23,6 @@ public class FileManager {
         } catch(IOException e2){
             e2.printStackTrace();
         }
-
     }
 
     public void saveShape(Shape s){
@@ -57,7 +56,6 @@ public class FileManager {
         return new Shape(propArray, shapeType, colorArray);
     }
 
-
         public void readFile(ShapeBox container, File data) throws IOException{
 
             String line = "";
@@ -77,15 +75,10 @@ public class FileManager {
                      line = bufferedReader.readLine();
                  }
             }
-
         }
 
         public File getCurrentFile(){
         return database;
         }
 
-
     }
-
-
-

@@ -6,13 +6,11 @@ public class Shape {
     private byte type;
     private float[] color;
 
-
     public Shape(float[] propArr, byte shapeType, float[] color){
         properties = propArr;
         type = shapeType;
         this.color = color;
     }
-
 
     public Color getColorObj(){
         return new Color(
@@ -30,12 +28,10 @@ public class Shape {
         int maxSizeX = (int)(maxSize*scaleX);
         int maxSizeY = (int)(maxSize*scaleY);
 
-
-
         if(type == 3){
             int[] trianglePropArr = new int[7];
 
-            trianglePropArr[0] = type;
+            trianglePropArr[0] = type; //set shape type
 
             trianglePropArr[1] = (int)(properties[0]*currentWindowWidth);   // x1
             trianglePropArr[2] = trianglePropArr[1]+(int)(maxSize*properties[3]*scaleX);   // x2
@@ -52,10 +48,9 @@ public class Shape {
         propArr[0] = type;
         propArr[1] = (int)(properties[0]*currentWindowWidth);   // x
         propArr[2] = (int)(properties[1]*currentWindowHeight);  // y
-        propArr[3] = (int)(properties[2]*maxSizeX+(maxSizeX/10));   // width
-        propArr[4] = (int)(properties[3]*maxSizeY+(maxSizeY/10));   // height
+        propArr[3] = (int)(properties[2]*maxSizeX);   // width
+        propArr[4] = (int)(properties[3]*maxSizeY);   // height
         return propArr;
-
     }
 
     public int[][] getTrainglePoints(int windX, int windY, int size){
@@ -78,17 +73,8 @@ public class Shape {
     return pointsArr;
     }
 
-
-    public float[] getProperties(){
-        return properties;
-    }
-
     public byte getType(){
         return type;
-    }
-
-    public float[] getColor(){
-        return color;
     }
 
     @Override
@@ -104,5 +90,4 @@ public class Shape {
 
         return obj;
     }
-
 }

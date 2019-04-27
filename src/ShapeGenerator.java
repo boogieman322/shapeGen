@@ -17,13 +17,10 @@ public class ShapeGenerator{
         shapeProp[2] = (float)(Math.random());
         shapeProp[3] = (float)(Math.random());
         }
-
-
                                              // 0 is arc,
                                              // 1 is oval/circle,
         byte type = (byte)(Math.random()*4); // 2 is rectangle,
                                              // 3 is triangle
-
 
         float[] colors = new float[3];
         colors[0] = (float)(Math.random());
@@ -36,7 +33,6 @@ public class ShapeGenerator{
             System.out.print("DENY");
             return generateShape();
     }
-
 
     public boolean fitsInWindow(float[] array, byte type){
 
@@ -52,7 +48,4 @@ public class ShapeGenerator{
 
                 return false;
     }
-
-
-
 }

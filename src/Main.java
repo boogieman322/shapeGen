@@ -25,7 +25,6 @@ public class Main {
         });
 
 
-
          Thread t1 = new Thread(()->{
              Shape tmp;
 
@@ -61,12 +60,8 @@ public class Main {
                  } catch (InterruptedException e) {
                      e.printStackTrace();
                  }
-
-
              }
-
          });
-
 
          t1.start();
          t2.start();

@@ -4,7 +4,6 @@ public class ShapeBox {
 
     private ArrayList<Shape> list;
 
-
     public ShapeBox(){
         list = new ArrayList<>();
     }
@@ -24,5 +23,4 @@ public class ShapeBox {
     public int getCount(){
         return list.size();
     }
-
 }
