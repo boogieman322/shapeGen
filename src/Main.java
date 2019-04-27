@@ -10,6 +10,7 @@ public class Main {
 
         myWindow okno = new myWindow("Generator livestream", 512,384);
         myWindow oknoDuo = new myWindow("Data from file",512,384);
+        okno.setLocation(550,0);
 
 
         Thread t2 = new Thread(()->{
@@ -65,7 +66,6 @@ public class Main {
              }
 
          });
-
 
 
          t1.start();

@@ -13,6 +13,12 @@ public class ShapeGenerator{
         shapeProp[2] = (float)(Math.random());
         shapeProp[3] = (float)(Math.random());
 
+        while(shapeProp[2] < 0.15F || shapeProp[3] < 0.15F){
+        shapeProp[2] = (float)(Math.random());
+        shapeProp[3] = (float)(Math.random());
+        }
+
+
                                              // 0 is arc,
                                              // 1 is oval/circle,
         byte type = (byte)(Math.random()*4); // 2 is rectangle,
@@ -34,14 +40,14 @@ public class ShapeGenerator{
 
     public boolean fitsInWindow(float[] array, byte type){
 
-            if(type== 3){
-                if ((array[0]+array[3]<= 1F) && (array[1]-(array[3]/2) < 1F))
+            if(type == 3){
+                if ((array[0]+array[3]<= 1F) && ((array[1]-array[3])>= 0F))
                     return true;
-                // else
-                   // return false;
+                else
+                   return false;
             }
 
-            if((array[0]+array[2]) <= 1F && (array[1]+array[3]) <= 1F){
+            if(((array[0]+array[2]) <= 1F) && ((array[1]+array[3]) <= 1F)){
                 return true;}
 
                 return false;
